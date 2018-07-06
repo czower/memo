@@ -1,0 +1,58 @@
+git add 백업할 대상파일
+git commit -m '.'
+git push
+
+git pull 서버에서 가져온다
+
+--------------------------------------------------------------
+
+파워 셀 시작할때 경로에 날짜 표시
+function prompt {
+    "PS: $(get-date)>"
+}
+
+파워 셀 시작할때 기본적인 표시
+function prompt {
+    $host.ui.rawui.WindowTitle = "PS $pwd"
+    $p = 'PS: ' + $(($pwd -split '\\')[-1] -join '\') + '> '
+    return $p
+}
+
+--------------------------------------------------------------
+
+cd .\bitcamp-web-01
+
+gradle init --type java-application
+
+gradle tasks
+
+gradle help
+
+gradle tasks --all
+
+
+============================
+
+이클립스 설정 파일 생성
+
+gradle eclipse
+
+gradle eclipseProject
+gradle eclipseClasspath
+gradle eclipseJdt
+
+============================
+
+이클립스 설정 파일 제거
+
+gradle cleanEclipse
+
+============================
+
+-----------------------------------------------------------------
+
+git clone http://github.com/eomjinyoung/bitcamp-cloud-computing.git
+
+
+
+

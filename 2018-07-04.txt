@@ -1,0 +1,96 @@
+https://ap-northeast-2.console.aws.amazon.com/ec2/v2/home?region=ap-northeast-2#SecurityGroups:search=sg-0c5aafdb4fcaf84f4;sort=groupId
+
+putty 다운
+
+https://docs.aws.amazon.com/ko_kr/AWSEC2/latest/UserGuide/install-LAMP.html
+
+https://docs.aws.amazon.com/ko_kr/AWSEC2/latest/UserGuide/putty.html
+
+아마존 키 발급
+
+putty에 아마존 키 연결
+
+인바운드 연결
+
+ec2-user@ec2-54-180-2-58.ap-northeast-2.compute.amazonaws.com
+
+
+--------------------------------------------------------------------
+
+sudo yum update -y
+
+최신상태로 업데이트
+
+-y (확인여부 묻지않는다)
+
+--------------------------------------------------------------------
+
+
+sudo yum install -y httpd24 php70 mysql56-server php70-mysqlnd
+
+관련 종속 프로그램 동시에 설치
+
+
+--------------------------------------------------------------------
+
+sudo service httpd start
+
+아파치 웹서버 시작
+
+--------------------------------------------------------------------
+
+sudo chkconfig httpd on
+
+chkconfig (명령어) 사용해서 웹서버가 매번 부팅할때 시작
+
+--------------------------------------------------------------------
+
+chkconfig --list httpd
+
+httpd가 실행되고 있는지 확인
+
+--------------------------------------------------------------------
+
+sudo usermod -a -G apache ec2-user
+
+사용자 ec2-user를 apache 그룹에 추가
+
+--------------------------------------------------------------------
+
+exit/quit 창 닫기
+
+--------------------------------------------------------------------
+
+sudo chown -R ec2-user:apache /var/www
+
+chown (파일 소유자를 변경한다.)
+
+--------------------------------------------------------------------
+
+echo "<?php phpinfo(); ?>" > /var/www/html/phpinfo.php
+
+> ("<?php phpinfo(); ?>" 를 /var/www/html/phpinfo.php 에 입력한다.
+
+--------------------------------------------------------------------
+
+rm /var/www/html/phpinfo.php
+
+rm (디렉터리 삭제)
+
+--------------------------------------------------------------------
+
+cd /var/www
+
+cd (디렉토리 변경 /var/www 으로)
+
+--------------------------------------------------------------------
+
+pwd (현재 경로 표시)
+
+
+
+
+
+
+
+
